@@ -630,6 +630,7 @@ var playing;
 function onLoad() {
     console.log("onload");
     const movOrig = document.getElementById('movOrig');
+    const movNo = document.getElementById('movNo');
     const txtScale = document.getElementById('txtScale');
     const barBold = document.getElementById('sliderBold');
     const barBlur = document.getElementById('sliderBlur');
@@ -640,6 +641,7 @@ function onLoad() {
 
     movOrig.addEventListener('canplaythrough', function() {
         movOrig.play();
+        movNo.play()
         playing = 1;
     }, true);
     movOrig.addEventListener('loadedmetadata', function() {
@@ -656,7 +658,7 @@ function onLoad() {
 
 
     const inputImg = new Image();
-    inputImg.src = "./image_input/input.png";
+    // inputImg.src = "./image_input/input.png";
     inputImg.onload = function() {
         let scale = parseFloat(txtScale.value);
 
@@ -750,21 +752,22 @@ function onSelectFile(input) {
 function onScaleChanged() {
     const txtScale = document.getElementById('txtScale');
 
-    scaler.resize(parseFloat(txtScale.value));
+    // scaler.resize(parseFloat(txtScale.value));
 
-    movOrig.width = document.getElementById('board').width
-    movOrig.height = document.getElementById('board').height
+    movNo.width = document.getElementById('board').width
+    movNo.height = document.getElementById('board').height
     console.log(movOrig.width)
 }
 
 function onClickVideo() {
-    movOrig = document.getElementById("movOrig")
     console.log("click");
     if (playing == 1) {
         movOrig.pause();
+        movNo.pause();
         playing = 0;
     } else {
         movOrig.play();
+        movNo.play();
         playing = 1;
     }
 }

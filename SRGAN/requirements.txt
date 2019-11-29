@@ -1,0 +1,6 @@
+avalon_framework
+colorama
+GPUtil
+psutil
+requests
+tqdm
