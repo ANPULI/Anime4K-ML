@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Name: Video2X Upscaler
-Author: K4YT3X
+Name: SRGAN Upscaler
+Author: ANPULI
 Date Created: December 10, 2018
-Last Modified: August 21, 2019
-
-Dev: SAT3LL
+Last Modified: December 9, 2019
 
 Licensed under the GNU General Public License Version 3 (GNU GPL v3),
     available at: https://www.gnu.org/licenses/gpl-3.0.txt
 
-(C) 2018-2019 K4YT3X
+(C) 2018-2019 ANPULI
 """
 
 # local imports
