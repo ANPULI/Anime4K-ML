@@ -1,3 +1,4 @@
 # Ignore output files
 web/*output*/
 SRGAN/temp
+sr_tfjs/
