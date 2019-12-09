@@ -658,7 +658,7 @@ function onLoad() {
 
 
     const inputImg = new Image();
-    inputImg.src = "./image_input/input.png";
+    // inputImg.src = "./image_input/input.png";
     inputImg.onload = function() {
         let scale = parseFloat(txtScale.value);
 
@@ -752,11 +752,11 @@ function onSelectFile(input) {
 function onScaleChanged() {
     const txtScale = document.getElementById('txtScale');
 
-    scaler.resize(parseFloat(txtScale.value));
+    // scaler.resize(parseFloat(txtScale.value));
 
-    // movNo.width = document.getElementById('board').width
-    // movNo.height = document.getElementById('board').height
-    // console.log(movOrig.width)
+    movNo.width = document.getElementById('board').width
+    movNo.height = document.getElementById('board').height
+    console.log(movOrig.width)
 }
 
 function onClickVideo() {
