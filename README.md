@@ -10,7 +10,9 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
       - [:ideograph_advantage: Sample Outputs](#ideograph_advantage-sample-outputs)
     - [:triangular_flag_on_post: Speed Benchmark](#triangular_flag_on_post-speed-benchmark)
     - [:mag: Similarity Measures](#mag-similarity-measures)
+      - [:ideograph_advantage: Do it on your own?](#ideograph_advantage-do-it-on-your-own)
     - [:pick: Train Your Own Model](#pick-train-your-own-model)
+      - [Convert images to h5 file (buggy, don't use)](#convert-images-to-h5-file-buggy-dont-use)
   - [:vertical_traffic_light: Quick Start: Video Upscaling](#vertical_traffic_light-quick-start-video-upscaling)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-1)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup-1)
@@ -101,6 +103,20 @@ Testing is also done on some anime images. The result goes as follows:
 | PSNR |  29.79  |  31.67  |  **32.88** |   ∞  |
 | SSIM |  0.9479 |  0.9585 | **0.9593** |   1  |
 
+#### :ideograph_advantage: Do it on your own?
+
+If you would like to test the similarity measures by yourself, there is an esay program [sewar](https://github.com/andrewekhalel/sewar) that provides the function. To get upscaled images using bicubic and nearest neighbors algorithms, you can use these the two python files:
+
+- `SRGAN-impl/image_resize_bicubic.py`
+- `SRGAN-impl/image_resize_nn.py`
+
+The usage of it is 
+
+```shell
+mkdir 'path/to/output/image'
+python image_resize_nn.py --res 'resolution' --input_dir 'path/to/input/image' --output_dir 'path/to/output/image'
+```
+
 ### :pick: Train Your Own Model
 
 To train the model, you need to have a local image dataset. However, you do not need to manually split the dataset into high-/low-resolution parts, the program will automatically do it for you. Then, simply execute the following command to start training:
@@ -110,6 +126,23 @@ python main.py --image_dir 'path/to/image/directory' --hr_size 384 --lr 1e-4 --s
 ```
 
 The training status will get updated every 200 iteration. To monitor the training process, you can open [tensorboard](https://www.tensorflow.org/tensorboard) and point it to the `log` directory that will be created upon training.
+
+#### Convert images to h5 file (buggy, don't use)
+
+If you are also using Google Colab as your training tool, and using Google Drive as the file system, you may have already spotted the following problems:
+
+- It takes a considerable time to read/write.
+- Some small files seem to exist when you visit them, but create `file_not_exist error` when accessed from programs.
+
+If yes, you may want to convert the images to a single file to boost the read/write speed and preserve file completeness.
+
+The `SRGAN-impl/image2h5.py` provides a solution by compressing multiple images into a [HDF5](https://support.hdfgroup.org/HDF5/whatishdf5.html) file. To use the file, first install the [h5py](https://pypi.org/project/h5py/) dependencies by executing the following command:
+
+```shell
+pip install h5py
+```
+
+Then 
 
 ## :vertical_traffic_light: Quick Start: Video Upscaling
 
