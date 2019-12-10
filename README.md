@@ -1,6 +1,19 @@
 # Anime4K-ML
 
-This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This project proposes an improved Anime real-time up-scaling method using a Generative Adversarial Network for super resolution, based on [Anime4K](https://github.com/bloc97/Anime4K "Anime4K"): an open-source, high-quality real-time anime upscaling algorithm. 
+This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This project proposes an improved Anime real-time up-scaling method using a Generative Adversarial Network for super resolution, based on [Anime4K](https://github.com/bloc97/Anime4K "Anime4K"): an open-source, high-quality real-time anime upscaling algorithm.
+
+- [Anime4K-ML](#anime4k-ml)
+  - [Quick Start: Video Upscaling](#quick-start-video-upscaling)
+    - [Prerequisites](#prerequisites)
+    - [Change Configuration](#change-configuration)
+    - [Install Dependencies](#install-dependencies)
+    - [Sample Video](#sample-video)
+    - [Run Upscaling](#run-upscaling)
+  - [Quick Start: Web Demo](#quick-start-web-demo)
+    - [Prerequisites](#prerequisites-1)
+    - [Deployment](#deployment)
+    - [Usage](#usage)
+  - [Credits](#credits)
 
 ## Quick Start: Video Upscaling
 
@@ -47,6 +60,30 @@ Enlarge the video to 960p ($4\times$) using the CPU.
 ```shell
 python main.py -i sample_input.mp4 -o sample_input_upscaled.mp4 -m cpu -r 4
 ```
+
+
+## Quick Start: Web Demo
+
+### Prerequisites
+
+None. This project uses [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), an extension on [VS Code](https://code.visualstudio.com/) to simply build a local server, but there is no specified requirements. In the following sections, all commands will be based on this setting.
+
+### Deployment
+
+First, clone the ANIME4K-ML repository to your local directory.
+
+```shell
+git clone https://github.com/ANPULI/Anime4K-ML.git
+code web
+```
+
+Open `index-demo.html`. Press `Ctrl+Shift+P` and then select `Live Server: Open with Live Server`. Or simply use the shortcut `Alt+L Alt+O` to deploy the website.
+
+### Usage
+
+The path is already set. Simple click `load with URI`, and you can take a look at the difference between the original video and upscaled one.
+
+For usage on other videos/images, you may deploy `index.html` and click `choose file`. You can play with the Scale, Bold, and Blur to see tilt the result.
 
 ## Credits
 
