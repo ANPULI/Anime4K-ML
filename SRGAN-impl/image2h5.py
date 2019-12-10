@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 
 parser = ArgumentParser()
-parser.add_argument('--image_dir', type=str, default='./images_input/', help='Directory where images are kept.')
+parser.add_argument('--image_dir', type=str, default='./image_input/', help='Directory where images are kept.')
 parser.add_argument('--image_format', type=str, default='png', help='Directory where to output high res images.')
 args = parser.parse_args()
 
