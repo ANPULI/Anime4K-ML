@@ -4,21 +4,41 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
 
 - [Anime4K-ML](#anime4k-ml)
   - [:vertical_traffic_light: Quick Start: Traning and Testing](#verticaltrafficlight-quick-start-traning-and-testing)
-  - [:vertical_traffic_light: Quick Start: Video Upscaling](#verticaltrafficlight-quick-start-video-upscaling)
     - [:nut_and_bolt: Prerequisites](#nutandbolt-prerequisites)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammerandwrench-installation-amp-setup)
+  - [:vertical_traffic_light: Quick Start: Video Upscaling](#verticaltrafficlight-quick-start-video-upscaling)
+    - [:nut_and_bolt: Prerequisites](#nutandbolt-prerequisites-1)
+    - [:hammer_and_wrench: Installation &amp; Setup](#hammerandwrench-installation-amp-setup-1)
       - [:warning: Change Configuration](#warning-change-configuration)
     - [:tv: Sample Video](#tv-sample-video)
     - [:rocket: Run Upscaling](#rocket-run-upscaling)
   - [:vertical_traffic_light: Quick Start: Web Demo](#verticaltrafficlight-quick-start-web-demo)
-    - [:nut_and_bolt: Prerequisites](#nutandbolt-prerequisites-1)
+    - [:nut_and_bolt: Prerequisites](#nutandbolt-prerequisites-2)
     - [:hammer_and_wrench: Deployment](#hammerandwrench-deployment)
     - [:tv: Usage](#tv-usage)
   - [:bulb: Credits](#bulb-credits)
 
 ## :vertical_traffic_light: Quick Start: Traning and Testing
 
+### :nut_and_bolt: Prerequisites
 
+- **Windows System**
+- **Python 3** [Download](https://www.python.org/downloads/windows/)
+
+### :hammer_and_wrench: Installation & Setup
+
+First, clone the ANIME4K-ML repository to your local directory.
+
+```shell
+git clone https://github.com/ANPULI/Anime4K-ML.git
+cd ANIME4K-ML/SRGAN-impl
+```
+
+Then, install the python dependencies using the following command before proceding.
+
+```shell
+pip install -r requirements.txt
+```
 
 ## :vertical_traffic_light: Quick Start: Video Upscaling
 
