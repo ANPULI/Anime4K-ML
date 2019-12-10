@@ -3,3 +3,4 @@ web/*output*/
 temp/
 sr_tfjs/
 .vscode/
+__pycache__
