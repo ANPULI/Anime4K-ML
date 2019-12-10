@@ -10,18 +10,22 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
 - **Python 3** [Download](https://www.python.org/downloads/windows/)
 - **FFmpeg Windows Build** [Download](https://ffmpeg.org/download.html)
 
+### Change Configuration
+
+After installing FFmpeg, please change the `ffmpeg_path` in `video2x.json` to the absolution path of your local installation.
+
 ### Install Dependencies
 
 First, clone the ANIME4K-ML repository to your local directory.
 
-```
-https://github.com/ANPULI/Anime4K-ML.git
+```shell
+git clone https://github.com/ANPULI/Anime4K-ML.git
 cd ANIME4K-ML/SRGAN-video
 ```
 
 Then, install the python dependencies using the following command before proceding.
 
-```
+```shell
 pip install -r requirements.txt
 ```
 
@@ -35,3 +39,11 @@ If you do not have a video to start with, you can use the sample video provided 
 - [Sample Video Upscaled (960p)](SRGAN-video/sample_output.mp4)
 
 Clip is from anime "さくら荘のペットな彼女". Copyright belongs to "株式会社アニプレックス (Aniplex Inc.)". Will delete immediately if use of clip is in violation of copyright.
+
+### Run Upscaling
+
+Enlarge the video to 960p ($4\times$) using the CPU.
+
+```shell
+python main.py -i sample_input.mp4 -o sample_input_upscaled.mp4 -m cpu -r 4
+```
