@@ -6,6 +6,8 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
   - [:vertical_traffic_light: Quick Start: Traning and Testing](#vertical_traffic_light-quick-start-traning-and-testing)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup)
+    - [Use Pre-trained Model](#use-pre-trained-model)
+    - [Train Your Own Model](#train-your-own-model)
   - [:vertical_traffic_light: Quick Start: Video Upscaling](#vertical_traffic_light-quick-start-video-upscaling)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-1)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup-1)
@@ -39,6 +41,43 @@ Then, install the python dependencies using the following command before procedi
 ```shell
 pip install -r requirements.txt
 ```
+
+### Use Pre-trained Model
+
+You can spare the efforts of training by directly using one of the following pre-installed model:
+
+- `models/generator.h5`, trained on [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/) dataset.
+- `models/generator_ANIME.h5`, trained on an [anime face dataset](https://github.com/Mckinsey666/Anime-Face-Dataset)
+
+It is recommended to use the first model, though it was based on anime. The second dataset sufferes severely from the low resolution of the dataset, therefore it performs not well in terms of visual perception.
+
+To use the DIV2K model, run the following in the terminal:
+
+```shell
+python infer_old.py --image_dir 'path/to/input/directory' --output_dir 'path/to/output/directory'
+```
+
+To use the anime model, run this:
+
+```shell
+python infer_anime.py --image_dir 'path/to/input/directory' --output_dir 'path/to/output/directory'
+```
+
+Here is the performance with contrast on other methods:
+
+![oldmanContrast](https://user-images.githubusercontent.com/26131764/70517197-28ec8680-1b73-11ea-942d-fd7a886d66c5.png)
+![redhairContrast](https://user-images.githubusercontent.com/26131764/70517199-2ab64a00-1b73-11ea-8b86-8e4f6dac9b0d.png)
+
+
+### Train Your Own Model
+
+To train the model, you need to have a local image dataset. Then, simply execute the following command to start training: 
+
+```shell
+python main.py --image_dir 'path/to/image/directory' --hr_size 384 --lr 1e-4 --save_iter 200 --epochs 10 --batch_size 14
+```
+
+The training status will get updated every 200 iteration. To monitor the training process, you can open [tensorboard](https://www.tensorflow.org/tensorboard) and point it to the `log` directory that will be created upon training.
 
 ## :vertical_traffic_light: Quick Start: Video Upscaling
 
