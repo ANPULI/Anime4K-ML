@@ -8,7 +8,9 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup)
     - [:rocket: Use Pre-trained Model](#rocket-use-pre-trained-model)
       - [:ideograph_advantage: Sample Outputs](#ideograph_advantage-sample-outputs)
-    - [:mag: Train Your Own Model](#mag-train-your-own-model)
+    - [:triangular_flag_on_post: Speed Benchmark](#triangular_flag_on_post-speed-benchmark)
+    - [:mag: Similarity Measures](#mag-similarity-measures)
+    - [:pick: Train Your Own Model](#pick-train-your-own-model)
   - [:vertical_traffic_light: Quick Start: Video Upscaling](#vertical_traffic_light-quick-start-video-upscaling)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-1)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup-1)
@@ -70,7 +72,36 @@ Here is the performance with contrast on other methods, all using 240p → 960p 
 
 ![sample outputs](https://user-images.githubusercontent.com/26131764/70522470-23476e80-1b7c-11ea-8c11-35ca91246d8d.png)
 
-### :mag: Train Your Own Model
+### :triangular_flag_on_post: Speed Benchmark
+
+The trained model is applied on two datasets, one is from DIV2K (800 images) and the other is from a 19 second anime clip (426 images) used in the demo. The average rendering speed result is shown below table, using the GPU provided in [Google Colab](https://colab.research.google.com/):
+
+| Input Image Size | Output Image Size | Time (s) | FPS |
+|:----------------:|:-----------------:|:--------:|:---:|
+|      128×128     |      512×512      |   0.022  |  46 |
+|      256×256     |     1024×1024     |   0.045  |  22 |
+|      384×384     |     1536×1536     |   0.083  |  12 |
+
+The problem this project aims to resolve is to upscale low resolution anime videos to high resolution ones (240p → 1080p). The typical FPS of anime videos is 24. Since the program is run on Google Colab, where the GPU is not dedicated to one user and the ﬁle system works extremely bad in terms of read/write speed. In a local system, the running speed will be much higher and satisfy the requirements.
+
+### :mag: Similarity Measures
+
+All experiments are performed with a scale factor of 4× between the low and high resolution images, corresponding to a 16× reduction in image pixels. The images Set5 and Set14 and the corresponding result metrics are attributed to the supplementary materials of [Huang et al](https://github.com/jbhuang0604/SelfExSR) and [Twitter's work on SRGAN](https://arxiv.org/abs/1609.04802). The highest results, except for ground truth, are formatted bold. It is apparent that SR-GAN is the best among the proposed methods. The comparison with other deep learning methods is not included because they are not at the same level of computing time - SRGAN works substantially faster. The result metric is shown below. The index MOS is given in SRGAN's paper that quantifies visual perception.
+
+| Set5&14 | nearest | bicubic |    SRGAN   |  GT  |
+|:-------:|:-------:|:-------:|:----------:|:----:|
+|   PSNR  |  26.26  |  28.43  |  **29.40** |   ∞  |
+|   SSIM  |  0.7552 |  0.8211 | **0.8472** |   1  |
+|   MOS   |   1.28  |   1.97  |  **3.58**  | 4.32 |
+
+Testing is also done on some anime images. The result goes as follows:
+
+|      | nearest | bicubic |    SRGAN   |  GT  |
+|:----:|:-------:|:-------:|:----------:|:----:|
+| PSNR |  29.79  |  31.67  |  **32.88** |   ∞  |
+| SSIM |  0.9479 |  0.9585 | **0.9593** |   1  |
+
+### :pick: Train Your Own Model
 
 To train the model, you need to have a local image dataset. However, you do not need to manually split the dataset into high-/low-resolution parts, the program will automatically do it for you. Then, simply execute the following command to start training:
 
