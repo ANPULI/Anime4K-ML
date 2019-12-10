@@ -66,7 +66,7 @@ python infer_anime.py --image_dir 'path/to/input/directory' --output_dir 'path/t
 
 #### :ideograph_advantage: Sample Outputs
 
-Here is the performance with contrast on other methods, all using $240p\rightarrow 960p (4\times)$ upscaling:
+Here is the performance with contrast on other methods, all using 240p → 960p (4x) upscaling:
 
 ![oldmanContrast](https://user-images.githubusercontent.com/26131764/70517197-28ec8680-1b73-11ea-942d-fd7a886d66c5.png)
 ![redhairContrast](https://user-images.githubusercontent.com/26131764/70517199-2ab64a00-1b73-11ea-8b86-8e4f6dac9b0d.png)
@@ -121,7 +121,7 @@ Clip is from anime "さくら荘のペットな彼女". Copyright belongs to "�
 
 ### :rocket: Run Upscaling
 
-Enlarge the video to 960p ($4\times$) using the CPU.
+Enlarge the video to 960p (4x) using the CPU.
 
 ```shell
 python main.py -i sample_input.mp4 -o sample_input_upscaled.mp4 -m cpu -r 4
