@@ -3,6 +3,7 @@
 This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This project proposes an improved Anime real-time up-scaling method using a Generative Adversarial Network for super resolution, based on [Anime4K](https://github.com/bloc97/Anime4K "Anime4K"): an open-source, high-quality real-time anime upscaling algorithm.
 
 - [Anime4K-ML](#anime4k-ml)
+  - [:vertical_traffic_light: Quick Start: Traning and Testing](#verticaltrafficlight-quick-start-traning-and-testing)
   - [:vertical_traffic_light: Quick Start: Video Upscaling](#verticaltrafficlight-quick-start-video-upscaling)
     - [:nut_and_bolt: Prerequisites](#nutandbolt-prerequisites)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammerandwrench-installation-amp-setup)
@@ -14,6 +15,10 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
     - [:hammer_and_wrench: Deployment](#hammerandwrench-deployment)
     - [:tv: Usage](#tv-usage)
   - [:bulb: Credits](#bulb-credits)
+
+## :vertical_traffic_light: Quick Start: Traning and Testing
+
+
 
 ## :vertical_traffic_light: Quick Start: Video Upscaling
 
