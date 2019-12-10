@@ -1,5 +1,5 @@
 # Ignore output files
 web/*output*/
-SRGAN/temp
+temp/
 sr_tfjs/
 .vscode/
