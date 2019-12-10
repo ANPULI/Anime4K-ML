@@ -1,10 +1,18 @@
+from argparse import ArgumentParser
+
+parser = ArgumentParser()
+parser.add_argument('--image_dir', type=str, default='./images_input/', help='Directory where images are kept.')
+parser.add_argument('--image_format', type=str, default='png', help='Directory where to output high res images.')
+args = parser.parse_args()
+
 print("first part")
 ########################## first part: prepare data ###########################
 import glob
 
-hdf5_path = './images1.hdf5'  # file path for the created .hdf5 file
+hdf5_path = './images.hdf5'  # file path for the created .hdf5 file
 
-images_path = './images_input/*.png' # the original data path
+# images_path = './images_input/*.png' # the original data path
+images_path = args.image_dir + '*.' + args.image_format
 
 # get all the image paths 
 addrs = glob.glob(images_path)
