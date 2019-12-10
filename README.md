@@ -6,7 +6,7 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
   - [:vertical_traffic_light: Quick Start: Video Upscaling](#verticaltrafficlight-quick-start-video-upscaling)
     - [:nut_and_bolt: Prerequisites](#nutandbolt-prerequisites)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammerandwrench-installation-amp-setup)
-      - [Change Configuration](#change-configuration)
+      - [:warning: Change Configuration](#warning-change-configuration)
     - [:tv: Sample Video](#tv-sample-video)
     - [:rocket: Run Upscaling](#rocket-run-upscaling)
   - [:vertical_traffic_light: Quick Start: Web Demo](#verticaltrafficlight-quick-start-web-demo)
@@ -38,7 +38,7 @@ Then, install the python dependencies using the following command before procedi
 pip install -r requirements.txt
 ```
 
-#### Change Configuration
+#### :warning: Change Configuration
 
 After installing FFmpeg, please change the `ffmpeg_path` in `video2x.json` to the absolution path of your local installation.
 

@@ -1,0 +1,58 @@
+#------------------------------------------------------------------------------
+# The famous data set:cats vs dogs is used in this example. The data set contains
+# 12500 dog pictures and 12500 cat pictures. All the images are shuffled randomly
+# and 20000 images are used to train, 5000 images are used to test. The images
+# can be resized to different sizes but the size of the .hdf5 file differs very
+# far depending on the size of the images. The file is 1.14G when the size of the 
+# images is (128,128) and 4.57G for (256,256), 18.3G for (512,512).
+#------------------------------------------------------------------------------
+
+print("first part")
+########################## first part: prepare data ###########################
+import glob
+
+hdf5_path = './images1.hdf5'  # file path for the created .hdf5 file
+
+images_path = './images_input/*.png' # the original data path
+
+# get all the image paths 
+addrs = glob.glob(images_path)
+
+                               
+# Divide the data into 80% for train and 20% for test
+train_addrs = addrs[:]
+print(len(train_addrs))
+
+print("second part")
+##################### second part: create the h5py object #####################
+import numpy as np
+import h5py
+
+train_shape = (len(train_addrs), 426, 240, 3)
+
+# open a hdf5 file and create earrays 
+f = h5py.File(hdf5_path, mode='w')
+
+# PIL.Image: the pixels range is 0-255,dtype is uint.
+# matplotlib: the pixels range is 0-1,dtype is float.
+f.create_dataset("train_img", train_shape, np.uint8)
+
+
+print("third part")
+######################## third part: write the images #########################
+import cv2
+
+# loop over train paths
+for i in range(len(train_addrs)):
+  
+    if i % 10 == 0 and i > 1:
+        print ('Train data: {}/{}'.format(i, len(train_addrs)) )
+
+    addr = train_addrs[i]
+    img = cv2.imread(addr)
+    img = cv2.resize(img, (240, 426), interpolation=cv2.INTER_CUBIC)# resize to (128,128)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    f["train_img"][i, ...] = img[None] 
+
+
+f.close()
