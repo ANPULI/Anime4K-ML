@@ -12,8 +12,8 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
     - [:mag: Similarity Measures](#mag-similarity-measures)
       - [:ideograph_advantage: Do it on your own?](#ideograph_advantage-do-it-on-your-own)
     - [:pick: Train Your Own Model](#pick-train-your-own-model)
-      - [Convert images to h5 file (buggy, don't use)](#convert-images-to-h5-file-buggy-dont-use)
-      - [Do upscaling on hdf5 image file](#do-upscaling-on-hdf5-image-file)
+      - [:wrench: Convert images to h5 file (buggy, don't use)](#wrench-convert-images-to-h5-file-buggy-dont-use)
+      - [:wrench: Do upscaling on hdf5 image file](#wrench-do-upscaling-on-hdf5-image-file)
   - [:vertical_traffic_light: Quick Start: Video Upscaling](#vertical_traffic_light-quick-start-video-upscaling)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-1)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup-1)
@@ -128,7 +128,7 @@ python main.py --image_dir 'path/to/image/directory' --hr_size 384 --lr 1e-4 --s
 
 The training status will get updated every 200 iteration. To monitor the training process, you can open [tensorboard](https://www.tensorflow.org/tensorboard) and point it to the `log` directory that will be created upon training.
 
-#### Convert images to h5 file (buggy, don't use)
+#### :wrench: Convert images to h5 file (buggy, don't use)
 
 If you are also using Google Colab as your training tool, and using Google Drive as the file system, you may have already spotted the following problems:
 
@@ -157,7 +157,7 @@ python image2h5.py --image_dir 'path/to/your/image/input' --image_format 'your_i
 
 This will produce a hdf5 file called `images.hdf5` that stores the information of all your images.
 
-#### Do upscaling on hdf5 image file
+#### :wrench: Do upscaling on hdf5 image file
 
 After you have your hdf5 file, you can train the model based on it by runing:
 
