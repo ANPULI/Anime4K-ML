@@ -6,8 +6,9 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
   - [:vertical_traffic_light: Quick Start: Traning and Testing](#vertical_traffic_light-quick-start-traning-and-testing)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup)
-    - [Use Pre-trained Model](#use-pre-trained-model)
-    - [Train Your Own Model](#train-your-own-model)
+    - [:rocket: Use Pre-trained Model](#rocket-use-pre-trained-model)
+      - [:ideograph_advantage: Sample Outputs](#ideograph_advantage-sample-outputs)
+    - [:mag: Train Your Own Model](#mag-train-your-own-model)
   - [:vertical_traffic_light: Quick Start: Video Upscaling](#vertical_traffic_light-quick-start-video-upscaling)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-1)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup-1)
@@ -42,7 +43,7 @@ Then, install the python dependencies using the following command before procedi
 pip install -r requirements.txt
 ```
 
-### Use Pre-trained Model
+### :rocket: Use Pre-trained Model
 
 You can spare the efforts of training by directly using one of the following pre-installed model:
 
@@ -63,15 +64,16 @@ To use the anime model, run this:
 python infer_anime.py --image_dir 'path/to/input/directory' --output_dir 'path/to/output/directory'
 ```
 
-Here is the performance with contrast on other methods:
+#### :ideograph_advantage: Sample Outputs
+
+Here is the performance with contrast on other methods, all using $240p\rightarrow 960p (4\times)$ upscaling:
 
 ![oldmanContrast](https://user-images.githubusercontent.com/26131764/70517197-28ec8680-1b73-11ea-942d-fd7a886d66c5.png)
 ![redhairContrast](https://user-images.githubusercontent.com/26131764/70517199-2ab64a00-1b73-11ea-8b86-8e4f6dac9b0d.png)
 
+### :mag: Train Your Own Model
 
-### Train Your Own Model
-
-To train the model, you need to have a local image dataset. Then, simply execute the following command to start training: 
+To train the model, you need to have a local image dataset. However, you do not need to manually split the dataset into high-/low-resolution parts, the program will automatically do it for you. Then, simply execute the following command to start training:
 
 ```shell
 python main.py --image_dir 'path/to/image/directory' --hr_size 384 --lr 1e-4 --save_iter 200 --epochs 10 --batch_size 14
