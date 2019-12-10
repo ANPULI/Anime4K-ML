@@ -83,6 +83,11 @@ Open `index-demo.html`. Press `Ctrl+Shift+P` and then select `Live Server: Open 
 
 The path is already set. Simple click `load with URI`, and you can take a look at the difference between the original video and upscaled one.
 
+This is a screenshot of the demo page. The upper is the upscaled video and the lower one is the original video. You can clearly notice that the upscaled video has smoother lines across the face and hair.
+
+![demo](https://user-images.githubusercontent.com/26131764/70494161-30953680-1b45-11ea-9625-2d83755874b3.png)
+
+
 For usage on other videos/images, you may deploy `index.html` and click `choose file`. You can play with the Scale, Bold, and Blur to see tilt the result.
 
 ## Credits
