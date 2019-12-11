@@ -215,6 +215,8 @@ python main.py -i sample_input.mp4 -o sample_input_upscaled.mp4 -m cpu -r 4
 
 ## :vertical_traffic_light: Quick Start: Web Demo
 
+The demo is available [here](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo"). You can spare the effort of deploying it locally, but feel free to preceed if you would like to make some own changes.
+
 ### :nut_and_bolt: Prerequisites
 
 None. This project uses [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), an extension on [VS Code](https://code.visualstudio.com/) to simply build a local server, but there is no specified requirements. In the following sections, all commands will be based on this setting.
