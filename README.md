@@ -13,9 +13,19 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
 - [Anime4K-ML](#anime4k-ml)
   - [TLDR](#tldr)
   - [Table of Contents](#table-of-contents)
-  - [:vertical_traffic_light: Quick Start: Traning and Testing](#vertical_traffic_light-quick-start-traning-and-testing)
+  - [:vertical_traffic_light: Quick Start: Web Demo](#vertical_traffic_light-quick-start-web-demo)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites)
+    - [:hammer_and_wrench: Deployment](#hammer_and_wrench-deployment)
+    - [:tv: Usage](#tv-usage)
+  - [:vertical_traffic_light: Quick Start: Video Upscaling](#vertical_traffic_light-quick-start-video-upscaling)
+    - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-1)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup)
+      - [:warning: Change Configuration](#warning-change-configuration)
+    - [:tv: Sample Video](#tv-sample-video)
+    - [:rocket: Run Upscaling](#rocket-run-upscaling)
+  - [:vertical_traffic_light: Quick Start: Traning and Testing](#vertical_traffic_light-quick-start-traning-and-testing)
+    - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-2)
+    - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup-1)
     - [:rocket: Use Pre-trained Model](#rocket-use-pre-trained-model)
       - [:ideograph_advantage: Sample Outputs](#ideograph_advantage-sample-outputs)
     - [:triangular_flag_on_post: Speed Benchmark](#triangular_flag_on_post-speed-benchmark)
@@ -24,17 +34,82 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
     - [:pick: Train Your Own Model](#pick-train-your-own-model)
       - [:wrench: Convert images to h5 file (buggy, don't use)](#wrench-convert-images-to-h5-file-buggy-dont-use)
       - [:wrench: Do upscaling on hdf5 image file](#wrench-do-upscaling-on-hdf5-image-file)
-  - [:vertical_traffic_light: Quick Start: Video Upscaling](#vertical_traffic_light-quick-start-video-upscaling)
-    - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-1)
-    - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup-1)
-      - [:warning: Change Configuration](#warning-change-configuration)
-    - [:tv: Sample Video](#tv-sample-video)
-    - [:rocket: Run Upscaling](#rocket-run-upscaling)
-  - [:vertical_traffic_light: Quick Start: Web Demo](#vertical_traffic_light-quick-start-web-demo)
-    - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-2)
-    - [:hammer_and_wrench: Deployment](#hammer_and_wrench-deployment)
-    - [:tv: Usage](#tv-usage)
   - [:bulb: Credits](#bulb-credits)
+
+## :vertical_traffic_light: Quick Start: Web Demo
+
+The demo is available [here](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo"). Please allow serveral seconds for the videos to be loaded if you open the website for the first time. If it doesn't play automatically, just simply click the `Pause/Play video` button to start playing the video because [Google disabled autoplay with sound](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes). You can spare the effort of deploying it locally, but feel free to preceed if you would like to make some own changes.
+
+This is a screenshot of the demo page. The upper is the upscaled video and the lower one is the original video. You can clearly notice that the upscaled video has smoother lines across the face and hair.
+
+![demo](https://user-images.githubusercontent.com/26131764/70494161-30953680-1b45-11ea-9625-2d83755874b3.png)
+
+### :nut_and_bolt: Prerequisites
+
+None. This project uses [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), an extension on [VS Code](https://code.visualstudio.com/) to simply build a local server, but there is no specified requirements. In the following sections, all commands will be based on this setting.
+
+### :hammer_and_wrench: Deployment
+
+First, clone the ANIME4K-ML repository to your local directory.
+
+```shell
+git clone https://github.com/ANPULI/Anime4K-ML.git
+code web
+```
+
+Open `index-demo.html`. Press `Ctrl+Shift+P` and then select `Live Server: Open with Live Server`. Or simply use the shortcut `Alt+L Alt+O` to deploy the website.
+
+### :tv: Usage
+
+The path is already set. Simple click `load with URI`, and you can take a look at the difference between the original video and upscaled one.
+
+For usage on other videos/images, you may deploy `index.html` and click `choose file`. You can play with the Scale, Bold, and Blur to see altered results.
+
+## :vertical_traffic_light: Quick Start: Video Upscaling
+
+### :nut_and_bolt: Prerequisites
+
+- **Windows System**
+- **Python 3** [Download](https://www.python.org/downloads/windows/)
+- **FFmpeg Windows Build** [Download](https://ffmpeg.org/download.html)
+
+### :hammer_and_wrench: Installation & Setup
+
+First, clone the ANIME4K-ML repository to your local directory.
+
+```shell
+git clone https://github.com/ANPULI/Anime4K-ML.git
+cd ANIME4K-ML/SRGAN-video
+```
+
+Then, install the python dependencies using the following command before proceding.
+
+```shell
+pip install -r requirements.txt
+```
+
+#### :warning: Change Configuration
+
+After installing FFmpeg, please change the `ffmpeg_path` in `video2x.json` to the absolution path of your local installation.
+
+### :tv: Sample Video
+
+If you do not have a video to start with, you can use the sample video provided in the sub-directory.
+
+![sample_contrast](https://user-images.githubusercontent.com/26131764/70491203-9aa8de00-1b3b-11ea-8f18-4975a04b6258.png)
+
+- [Sample Video Original (240p)](SRGAN-video/sample_input.mp4)
+- [Sample Video Upscaled (960p)](SRGAN-video/sample_output.mp4)
+
+Clip is from anime "さくら荘のペットな彼女". Copyright belongs to "株式会社アニプレックス (Aniplex Inc.)". Will delete immediately if use of clip is in violation of copyright.
+
+### :rocket: Run Upscaling
+
+Enlarge the video to 960p (4x) using the CPU.
+
+```shell
+python main.py -i sample_input.mp4 -o sample_input_upscaled.mp4 -m cpu -r 4
+```
 
 ## :vertical_traffic_light: Quick Start: Traning and Testing
 
@@ -121,7 +196,7 @@ If you would like to test the similarity measures by yourself, there is an esay 
 - `SRGAN-impl/image_resize_bicubic.py`
 - `SRGAN-impl/image_resize_nn.py`
 
-The usage of it is 
+The usage of it is as follows:
 
 ```shell
 mkdir 'path/to/output/image'
@@ -176,81 +251,6 @@ python infer_h5.py --output_dir 'path/to/output/image'
 ```
 
 This will generate upscaled images in your desired output directory.
-
-## :vertical_traffic_light: Quick Start: Video Upscaling
-
-### :nut_and_bolt: Prerequisites
-
-- **Windows System**
-- **Python 3** [Download](https://www.python.org/downloads/windows/)
-- **FFmpeg Windows Build** [Download](https://ffmpeg.org/download.html)
-
-### :hammer_and_wrench: Installation & Setup
-
-First, clone the ANIME4K-ML repository to your local directory.
-
-```shell
-git clone https://github.com/ANPULI/Anime4K-ML.git
-cd ANIME4K-ML/SRGAN-video
-```
-
-Then, install the python dependencies using the following command before proceding.
-
-```shell
-pip install -r requirements.txt
-```
-
-#### :warning: Change Configuration
-
-After installing FFmpeg, please change the `ffmpeg_path` in `video2x.json` to the absolution path of your local installation.
-
-### :tv: Sample Video
-
-If you do not have a video to start with, you can use the sample video provided in the sub-directory.
-
-![sample_contrast](https://user-images.githubusercontent.com/26131764/70491203-9aa8de00-1b3b-11ea-8f18-4975a04b6258.png)
-
-- [Sample Video Original (240p)](SRGAN-video/sample_input.mp4)
-- [Sample Video Upscaled (960p)](SRGAN-video/sample_output.mp4)
-
-Clip is from anime "さくら荘のペットな彼女". Copyright belongs to "株式会社アニプレックス (Aniplex Inc.)". Will delete immediately if use of clip is in violation of copyright.
-
-### :rocket: Run Upscaling
-
-Enlarge the video to 960p (4x) using the CPU.
-
-```shell
-python main.py -i sample_input.mp4 -o sample_input_upscaled.mp4 -m cpu -r 4
-```
-
-## :vertical_traffic_light: Quick Start: Web Demo
-
-The demo is available [here](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo"). Please allow serveral seconds for the videos to be loaded if you open the website for the first time. If it doesn't play automatically, just simply click the `Pause/Play video` button to start playing the video because [Google disabled autoplay with sound](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes). You can spare the effort of deploying it locally, but feel free to preceed if you would like to make some own changes.
-
-This is a screenshot of the demo page. The upper is the upscaled video and the lower one is the original video. You can clearly notice that the upscaled video has smoother lines across the face and hair.
-
-![demo](https://user-images.githubusercontent.com/26131764/70494161-30953680-1b45-11ea-9625-2d83755874b3.png)
-
-### :nut_and_bolt: Prerequisites
-
-None. This project uses [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), an extension on [VS Code](https://code.visualstudio.com/) to simply build a local server, but there is no specified requirements. In the following sections, all commands will be based on this setting.
-
-### :hammer_and_wrench: Deployment
-
-First, clone the ANIME4K-ML repository to your local directory.
-
-```shell
-git clone https://github.com/ANPULI/Anime4K-ML.git
-code web
-```
-
-Open `index-demo.html`. Press `Ctrl+Shift+P` and then select `Live Server: Open with Live Server`. Or simply use the shortcut `Alt+L Alt+O` to deploy the website.
-
-### :tv: Usage
-
-The path is already set. Simple click `load with URI`, and you can take a look at the difference between the original video and upscaled one.
-
-For usage on other videos/images, you may deploy `index.html` and click `choose file`. You can play with the Scale, Bold, and Blur to see altered results.
 
 ## :bulb: Credits
 
