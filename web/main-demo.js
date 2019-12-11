@@ -627,6 +627,18 @@ Scaler.prototype.render = function() {
 var scaler = null;
 var playing;
 
+
+const promiseLoading = (video) => {
+    return new Promise((resolve, reject) => {
+        video.addEventListener(('canplay'), () => {
+            resolve(video);
+        });
+        video.addEventListener('error', () => {
+            reject();
+        })
+    })
+} 
+
 function onLoad() {
     console.log("onload");
     const movOrig = document.getElementById('movOrig');
@@ -639,11 +651,16 @@ function onLoad() {
     const gl = board.getContext('webgl');
 
 
-    movOrig.addEventListener('canplaythrough', function() {
-        movOrig.play();
-        movNo.play()
-        playing = 1;
-    }, true);
+    movOrig.src = "./video_input/sample_output.mp4";
+
+    Promise.all([promiseLoading(movNo), promiseLoading(movOrig)]).then((videos) => {
+        videos.forEach((video) => video.play());
+    })
+    // movOrig.addEventListener('canplaythrough', function() {
+    //     // movOrig.play();
+    //     // movNo.play()
+    //     playing = 1;
+    // }, true);
     movOrig.addEventListener('loadedmetadata', function() {
         let scale = parseFloat(txtScale.value);
 
@@ -761,13 +778,22 @@ function onScaleChanged() {
 
 function onClickVideo() {
     console.log("click");
-    if (playing == 1) {
-        movOrig.pause();
-        movNo.pause();
-        playing = 0;
-    } else {
-        movOrig.play();
+    if (movNo.paused) {
+        console.log("paused");
         movNo.play();
-        playing = 1;
+        movOrig.play();
+    } else {
+        console.log("playing");
+        movNo.pause();
+        movOrig.pause();
     }
+    // if (playing == 1) {
+    //     movOrig.pause();
+    //     movNo.pause();
+    //     playing = 0;
+    // } else {
+    //     movOrig.play();
+    //     movNo.play();
+    //     playing = 1;
+    // }
 }
