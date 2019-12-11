@@ -215,8 +215,11 @@ python main.py -i sample_input.mp4 -o sample_input_upscaled.mp4 -m cpu -r 4
 
 ## :vertical_traffic_light: Quick Start: Web Demo
 
-The demo is available [here](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo"). You can spare the effort of deploying it locally, but feel free to preceed if you would like to make some own changes.
+The demo is available [here](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo"). Simply click the `Pause/Play video` button to start playing the video because [Google disabled autoplay with sound](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes). You can spare the effort of deploying it locally, but feel free to preceed if you would like to make some own changes.
 
+This is a screenshot of the demo page. The upper is the upscaled video and the lower one is the original video. You can clearly notice that the upscaled video has smoother lines across the face and hair.
+
+![demo](https://user-images.githubusercontent.com/26131764/70494161-30953680-1b45-11ea-9625-2d83755874b3.png)
 ### :nut_and_bolt: Prerequisites
 
 None. This project uses [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), an extension on [VS Code](https://code.visualstudio.com/) to simply build a local server, but there is no specified requirements. In the following sections, all commands will be based on this setting.
@@ -236,12 +239,7 @@ Open `index-demo.html`. Press `Ctrl+Shift+P` and then select `Live Server: Open 
 
 The path is already set. Simple click `load with URI`, and you can take a look at the difference between the original video and upscaled one.
 
-This is a screenshot of the demo page. The upper is the upscaled video and the lower one is the original video. You can clearly notice that the upscaled video has smoother lines across the face and hair.
-
-![demo](https://user-images.githubusercontent.com/26131764/70494161-30953680-1b45-11ea-9625-2d83755874b3.png)
-
-
-For usage on other videos/images, you may deploy `index.html` and click `choose file`. You can play with the Scale, Bold, and Blur to see tilt the result.
+For usage on other videos/images, you may deploy `index.html` and click `choose file`. You can play with the Scale, Bold, and Blur to see altered results.
 
 ## :bulb: Credits
 
