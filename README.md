@@ -215,7 +215,7 @@ python main.py -i sample_input.mp4 -o sample_input_upscaled.mp4 -m cpu -r 4
 
 ## :vertical_traffic_light: Quick Start: Web Demo
 
-The demo is available [here](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo"). Simply click the `Pause/Play video` button to start playing the video because [Google disabled autoplay with sound](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes). You can spare the effort of deploying it locally, but feel free to preceed if you would like to make some own changes.
+The demo is available [here](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo"). Please allow serveral seconds for the videos to be loaded if you open the website for the first time. If it doesn't play automatically, just simply click the `Pause/Play video` button to start playing the video because [Google disabled autoplay with sound](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes). You can spare the effort of deploying it locally, but feel free to preceed if you would like to make some own changes.
 
 This is a screenshot of the demo page. The upper is the upscaled video and the lower one is the original video. You can clearly notice that the upscaled video has smoother lines across the face and hair.
 
