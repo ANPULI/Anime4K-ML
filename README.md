@@ -220,6 +220,7 @@ The demo is available [here](https://anpuli.github.io/Anime4K-ML/web/index-demo.
 This is a screenshot of the demo page. The upper is the upscaled video and the lower one is the original video. You can clearly notice that the upscaled video has smoother lines across the face and hair.
 
 ![demo](https://user-images.githubusercontent.com/26131764/70494161-30953680-1b45-11ea-9625-2d83755874b3.png)
+
 ### :nut_and_bolt: Prerequisites
 
 None. This project uses [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), an extension on [VS Code](https://code.visualstudio.com/) to simply build a local server, but there is no specified requirements. In the following sections, all commands will be based on this setting.
