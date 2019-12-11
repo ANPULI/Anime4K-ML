@@ -176,7 +176,7 @@ The problem this project aims to resolve is to upscale low resolution anime vide
 
 All experiments are performed with a scale factor of 4× between the low and high resolution images, corresponding to a 16× reduction in image pixels. The images Set5 and Set14 and the corresponding result metrics are attributed to the supplementary materials of [Huang et al](https://github.com/jbhuang0604/SelfExSR) and [Twitter's work on SRGAN](https://arxiv.org/abs/1609.04802). The highest results, except for ground truth, are formatted bold. It is apparent that SR-GAN is the best among the proposed methods. The comparison with other deep learning methods is not included because they are not at the same level of computing time - SRGAN works substantially faster. The result metric is shown below. The index MOS is given in SRGAN's paper that quantifies visual perception.
 
-| Set5&14 | nearest | bicubic |    SRGAN   |  Original  |
+| Set5&14 | nearest | bicubic |    SRGAN   |  original  |
 |:-------:|:-------:|:-------:|:----------:|:----------:|
 |   PSNR  |  26.26  |  28.43  |  **29.40** |      ∞     |
 |   SSIM  |  0.7552 |  0.8211 | **0.8472** |      1     |
@@ -184,7 +184,7 @@ All experiments are performed with a scale factor of 4× between the low and hig
 
 Testing is also done on some anime images. The result goes as follows:
 
-|      | nearest | bicubic |    SRGAN   |  Original  |
+|      | nearest | bicubic |    SRGAN   |  original  |
 |:----:|:-------:|:-------:|:----------:|:----------:|
 | PSNR |  29.79  |  31.67  |  **32.88** |      ∞     |
 | SSIM |  0.9479 |  0.9585 | **0.9593** |      1     |
