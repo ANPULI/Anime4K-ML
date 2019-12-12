@@ -256,7 +256,7 @@ This will generate upscaled images in your desired output directory.
 
 ## :vertical_traffic_light: Quick Start: Notebooks
 
-In the directory `notebooks` store the jupyter notebooks this project used on Google Colab, including different stages of this project.
+In the directory `notebooks` store the jupyter notebooks this project used on Google Colab, including different stages of this project. Here is the list of each notebook and a short description on what each notebook does.
 
 ## :bulb: Credits
 
