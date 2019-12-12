@@ -7,6 +7,7 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
 1. Open [this page](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo") to see the live demo. Allow serveral seconds for loading the videos.
 2. Jump to [this section](#vertical_traffic_light-quick-start-video-upscaling) to upscale your own videos.
 3. Refer to [this section](#vertical_traffic_light-quick-start-traning-and-testing) to train your own model.
+4. [This section] contains the jupyter notebooks this project used on Google Colab.
 
 ## Table of Contents
 
@@ -34,6 +35,7 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
     - [:pick: Train Your Own Model](#pick-train-your-own-model)
       - [:wrench: Convert images to h5 file (buggy, don't use)](#wrench-convert-images-to-h5-file-buggy-dont-use)
       - [:wrench: Do upscaling on hdf5 image file](#wrench-do-upscaling-on-hdf5-image-file)
+  - [:vertical_traffic_light: Quick Start: Notebooks](#vertical_traffic_light-quick-start-notebooks)
   - [:bulb: Credits](#bulb-credits)
 
 ## :vertical_traffic_light: Quick Start: Web Demo
@@ -251,6 +253,10 @@ python infer_h5.py --output_dir 'path/to/output/image'
 ```
 
 This will generate upscaled images in your desired output directory.
+
+## :vertical_traffic_light: Quick Start: Notebooks
+
+In the directory `notebooks` store the jupyter notebooks this project used on Google Colab, including different stages of this project.
 
 ## :bulb: Credits
 
