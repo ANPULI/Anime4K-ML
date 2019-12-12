@@ -1,0 +1,3 @@
+[submodule "Anime4K-ML-notebooks"]
+	path = Anime4K-ML-notebooks
+	url = https://github.com/ANPULI/Anime4K-ML-notebooks
