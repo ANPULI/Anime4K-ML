@@ -102,9 +102,11 @@ After installing FFmpeg, please change the `ffmpeg_path` in `video2x.json` to th
 
 If you do not have a video to start with, you can use the sample video provided in the sub-directory.
 
-![sample_contrast](https://user-images.githubusercontent.com/26131764/70491203-9aa8de00-1b3b-11ea-8f18-4975a04b6258.png)
+<!-- ![sample_contrast](https://user-images.githubusercontent.com/26131764/70491203-9aa8de00-1b3b-11ea-8f18-4975a04b6258.png)
 
-![FotoJet (1)](https://user-images.githubusercontent.com/26131764/70698767-11440800-1d03-11ea-898d-f4b5560334d7.png)
+![FotoJet (1)](https://user-images.githubusercontent.com/26131764/70698767-11440800-1d03-11ea-898d-f4b5560334d7.png) -->
+
+![sample_contrast_4to3](https://user-images.githubusercontent.com/26131764/70699347-ee662380-1d03-11ea-83c7-490cc312389e.png)
 
 - [Sample Video Original (240p)](SRGAN-video/sample_input.mp4)
 - [Sample Video Upscaled (960p)](SRGAN-video/sample_output.mp4)
