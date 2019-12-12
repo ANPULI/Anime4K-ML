@@ -9,8 +9,8 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
 ## TLDR
 
 1. Open [this page](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo") to see the live demo. Allow serveral seconds for loading the videos.
-2. Jump to [this section](#vertical_traffic_light-quick-start-video-upscaling "video upscaling") to upscale your own videos.
-3. Refer to [this section](#vertical_traffic_light-quick-start-traning-and-testing "training") to train your own model.
+2. Refer to [this section](#toy-example) to run a toy example using the pre-trained model. And use [this section](#vertical_traffic_light-quick-start-traning-and-testing "training") to train your own model.
+3. Jump to [this section](#vertical_traffic_light-quick-start-video-upscaling "video upscaling") to upscale your own videos.
 4. [This section](#vertical_traffic_light-quick-start-notebooks "notebooks") contains the jupyter notebooks this project used on Google Colab.
 
 ## Table of Contents
@@ -25,17 +25,18 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
   - [:vertical_traffic_light: Quick Start: Video Upscaling](#vertical_traffic_light-quick-start-video-upscaling)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-1)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup)
-      - [:warning: Change Configuration](#warning-change-configuration)
+      - [Change Configuration](#change-configuration)
     - [:tv: Sample Video](#tv-sample-video)
     - [:rocket: Run Upscaling](#rocket-run-upscaling)
   - [:vertical_traffic_light: Quick Start: Traning and Testing](#vertical_traffic_light-quick-start-traning-and-testing)
     - [:nut_and_bolt: Prerequisites](#nut_and_bolt-prerequisites-2)
     - [:hammer_and_wrench: Installation &amp; Setup](#hammer_and_wrench-installation-amp-setup-1)
     - [:rocket: Use Pre-trained Model](#rocket-use-pre-trained-model)
-      - [:ideograph_advantage: Sample Outputs](#ideograph_advantage-sample-outputs)
+      - [Toy Example](#toy-example)
+      - [Sample Outputs](#sample-outputs)
     - [:triangular_flag_on_post: Speed Benchmark](#triangular_flag_on_post-speed-benchmark)
     - [:mag: Similarity Measures](#mag-similarity-measures)
-      - [:ideograph_advantage: Do it on your own?](#ideograph_advantage-do-it-on-your-own)
+      - [Do it on your own?](#do-it-on-your-own)
     - [:pick: Train Your Own Model](#pick-train-your-own-model)
       - [:wrench: Convert images to h5 file (buggy, don't use)](#wrench-convert-images-to-h5-file-buggy-dont-use)
       - [:wrench: Do upscaling on hdf5 image file](#wrench-do-upscaling-on-hdf5-image-file)
@@ -94,9 +95,9 @@ Then, install the python dependencies using the following command before procedi
 pip install -r requirements.txt
 ```
 
-#### :warning: Change Configuration
+#### Change Configuration
 
-After installing FFmpeg, please change the `ffmpeg_path` in `video2x.json` to the absolution path of your local installation.
+:warning: **Caveat**: After installing FFmpeg, please change the `ffmpeg_path` in `video2x.json` to the absolution path of your local installation.
 
 ### :tv: Sample Video
 
@@ -164,7 +165,24 @@ To use the anime model, run this:
 python infer_anime.py --image_dir 'path/to/input/directory' --output_dir 'path/to/output/directory'
 ```
 
-#### :ideograph_advantage: Sample Outputs
+#### Toy Example
+
+The folder `./SRGAN-impl/image_input` contains several images that you can use as an toy example to train.
+
+```shell
+mkdir temp_output
+python infer_old.py --image_dir "./image_input/" --output_dir "./temp_output"
+```
+
+Then you can see the upscaled images in `./temp_output`, which should be the same as in `./image_output`.
+
+To clean the output, use
+
+```shell
+rm -rf temp_output
+```
+
+#### Sample Outputs
 
 Here is the performance with contrast on other methods, all using 240p → 960p (4x) upscaling:
 
@@ -199,7 +217,7 @@ Testing is also done on some anime images. The result goes as follows:
 | PSNR |  29.79  |  31.67  |  **32.88** |      ∞     |
 | SSIM |  0.9479 |  0.9585 | **0.9593** |      1     |
 
-#### :ideograph_advantage: Do it on your own?
+#### Do it on your own?
 
 If you would like to test the similarity measures by yourself, there is an esay program [sewar](https://github.com/andrewekhalel/sewar) that provides the function. To get upscaled images using bicubic and nearest neighbors algorithms, you can use these the two python files:
 
