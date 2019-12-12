@@ -5,9 +5,9 @@ This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This pr
 ## TLDR
 
 1. Open [this page](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo") to see the live demo. Allow serveral seconds for loading the videos.
-2. Jump to [this section](#vertical_traffic_light-quick-start-video-upscaling) to upscale your own videos.
-3. Refer to [this section](#vertical_traffic_light-quick-start-traning-and-testing) to train your own model.
-4. [This section] contains the jupyter notebooks this project used on Google Colab.
+2. Jump to [this section](#vertical_traffic_light-quick-start-video-upscaling "video upscaling") to upscale your own videos.
+3. Refer to [this section](#vertical_traffic_light-quick-start-traning-and-testing "training") to train your own model.
+4. [This section](#vertical_traffic_light-quick-start-notebooks "notebooks") contains the jupyter notebooks this project used on Google Colab.
 
 ## Table of Contents
 
