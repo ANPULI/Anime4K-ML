@@ -256,7 +256,18 @@ This will generate upscaled images in your desired output directory.
 
 ## :vertical_traffic_light: Quick Start: Notebooks
 
-In the directory `notebooks` store the jupyter notebooks this project used on Google Colab, including different stages of this project. Here is the list of each notebook and a short description on what each notebook does.
+In the directory `/notebooks` store some jupyter notebooks this project used on Google Colab, covering different stages of this project. Here is the list of each notebook and a short description on what each notebook does. In the notebooks there will be more instructions.
+
+:warning: Caveat: These notebooks are not executable on your local file systems because they mount to the Google Drive for storage. If you feel interested in running the notebooks, please feel free to [contact me](mailto:anpu.li@nyu.edu) for access and instructions.
+
+| File Name                    | Usage                                                                                                                                                                                      | Author      |
+|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| `load_dataset.ipynb`         | Covers the code that downloaded datasets to Google Drive.                                                                                                                                  | Hongyi Li   |
+| `interpolation.ipynb`        | Bilinear, bicubic, and quintic upscaling using Scipy on some sample images.                                                                                                                | Qihang Zeng |
+| `midterm_presentation.ipynb` | Covers the dataset this project used and some preliminary experiments on the datasets, i.e., randomly picked some images and applied different upscaling algorithms and showed the result. | Hongyi Li   |
+| `video2x.ipynb`              | Failed attempt to run a video upscaling pipeline. (System doesn't match)                                                                                                                   | Anpu Li     |
+| `fast-srgan.ipynb`           | Covers the training and testing using SRGAN and a complete pipeline of extracting frames, applyig super resolution, and converting back to video.                                          | Anpu Li     |
+| `final.ipynb`                | Covers the experiments, including the speed benchmark and similarity measures.                                                                                                             | Anpu Li     |
 
 ## :bulb: Credits
 
