@@ -2,6 +2,10 @@
 
 This is the course project of _2019 Fall CSCI-SHU 360 Machine Learning_. This project proposes an improved Anime real-time up-scaling method using a Generative Adversarial Network for super resolution, based on [Anime4K](https://github.com/bloc97/Anime4K "Anime4K"): an open-source, high-quality real-time anime upscaling algorithm.
 
+- **Project Proposal**: [link](https://drive.google.com/file/d/1vKJYI5tyNc9SgRXe9Z-HtOjYhxN05UV_/view?usp=sharing "Project Proposal")
+- **Final Presentation Slides**: [link](https://docs.google.com/presentation/d/1sPmbEsyfKu3xm9RVdhVx6auQInFlOF1FtKpQChsTU5c/edit?usp=sharing "Final Slides")
+- **Final Paper**: [link](https://drive.google.com/file/d/1PQC29c6H9ce1jls3KMUjydWsp2oMG9pQ/view?usp=sharing "Final Paper")
+
 ## TLDR
 
 1. Open [this page](https://anpuli.github.io/Anime4K-ML/web/index-demo.html "demo") to see the live demo. Allow serveral seconds for loading the videos.
@@ -256,7 +260,7 @@ This will generate upscaled images in your desired output directory.
 
 ## :vertical_traffic_light: Quick Start: Notebooks
 
-In the directory `/notebooks` store some jupyter notebooks this project used on Google Colab, covering different stages of this project. Here is the list of each notebook and a short description on what each notebook does. In the notebooks there will be more instructions.
+In the directory `./Anime4K-ML-notebooks/` store some jupyter notebooks this project used on Google Colab, covering different stages of this project. Here is the list of each notebook and a short description on what each notebook does. In the notebooks there will be more instructions.
 
 :warning: Caveat: These notebooks are not executable on your local file systems because they mount to the Google Drive for storage. If you feel interested in running the notebooks, please feel free to [contact me](mailto:anpu.li@nyu.edu) for access and instructions.
 
