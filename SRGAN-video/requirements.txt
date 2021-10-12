@@ -5,5 +5,5 @@ psutil
 requests
 tqdm
 tensorflow==2.0.0
-opencv-python==4.1.1.26
+opencv-python==4.2.0.32
 numpy==1.17.2
